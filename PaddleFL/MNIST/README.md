@@ -1,10 +1,10 @@
-# MNIST data set 
+# MNIST dataset 
 
-In this folder, we run a federated learning script with PaddleFL. Moreover, in the script [paddlepaddle_mninst.py](/PaddleFL/MNIST/paddlepaddle_mninst.py), you can find the script that run centralize learning on the same data set with paddelpaddle.
+In this folder, we run a federated learning script with PaddleFL. Moreover, in the script [paddlepaddle_mninst.py](/PaddleFL/MNIST/paddlepaddle_mninst.py), you can find the script that run centralize learning on the same dataset with paddelpaddle.
 
 ### Pre-requist 
 
-To work with the mnist data set, downloaded in the folder [data](/data), you must to install **mlxtend**, with the following command:
+To work with the mnist dataset, downloaded in the folder [data](/data), you must to install **mlxtend**, with the following command:
 
     pip3 install mlxtend
 
@@ -35,9 +35,9 @@ To conclude, you can run the paddlepaddle's script with this command, to compare
 >
 > For example, with the CNN, I obtain this graph:
 ><table>
-    <tr>
-        <th colspan=2>CNN PaddleFL</th>
-    </tr>
+  <tr>
+      <th colspan=2>CNN PaddleFL</th>
+  </tr>
   <tr>
     <td>Train Loss</td>
      <td>Train Accuracy</td>
@@ -55,6 +55,7 @@ To conclude, you can run the paddlepaddle's script with this command, to compare
     <td><img src="../../images/paddlefl_MNIST_CNN_test_acc.png" width=300></td>
   </tr>
  </table>
+ 
 <table>
     <tr>
         <th colspan=2>CNN PaddlePaddle</th>

@@ -4,7 +4,8 @@ The Machine Learning is the fact to offer at the computer  the capacity to "lear
 
 Nowadays, for the learning data is collected and centralize by companies, but this approached is not always applicable because in some sectors data are protected for example in Banks or in Medical. to solve this problem a new approach of learning are in development, the Federated Learning.
 
-In this Github we find applications of different FL frameworks like Tensorflow Federated, Pysift and PaddleFL.
+In this Github we find applications of different FL frameworks like Tensorflow Federated, Pysyft and PaddleFL.
+
 Before beginning to discuss these frameworks, I want to present quickly the idea of the Federated Learning.
 
 ### Federated learning main idea and documents
@@ -41,21 +42,22 @@ I give you some documents to learn more about this method and its challenges
 In this document we will compare the following open-source FL frameworks:
 * Tensoflow Federated (TFF) of Google Inc
 * Paddle Federated Learning (PaddleFL) of Baidu
-* Pysift of the open community OpenMined
+* Pysyft of the open community OpenMined
 <!-- * IBM Federated Learning of IBM -->
 
-Their performance are evaluate on two data sets:
-* The MNIST's data set that contain images of digits
+Their performance are evaluate on two datasets:
+* The MNIST's dataset that contain images of digits
 * The weather data in France, it corresponding at time-series data.
 
-These two data set are imported in [data](/data)
+These two dataset are imported in [data](/data)
 
 In this project these frameworks are evaluate in many aspects like:
 
 * Simplicity of the installation
 * Maturity, documentation and community
 * Comparison of the built model’s accuracy and of the training process performance
-* Capacity to do simulation and to deployed
+* Capacity to do simulation and to deploy solutions
+
 
 > My device is an Hp EliteBook, without GPU, composed by an Intel Core i7-6600U, 2.60 GHz 2.81 GHz and 16 Go of RAM
 
@@ -70,9 +72,9 @@ In this project these frameworks are evaluate in many aspects like:
 Tensorflow Federated don't offer the privacy of data and the use of GPU. To add the privacy of data we can use [TensorFlowPrivacy](https://github.com/tensorflow/privacy) that allow to train machine-learning models with privacy 
 
 
-#### Pysift of the open community OpenMined
+#### Pysyft of the open community OpenMined
 
-[TODO]
+[Pysyft](https://github.com/OpenMined/PySyft) is developed by the open community OpenMined. It allows to perform Federated Learning within the main Deep Learning frameworks like PyTorch, Keras and TensorFlow. It combines federated learning, secured multiple-party computations and differential privacy to train robust privacy neural networks. With **Duet** it allows a data scientist to perform a model on remote data in collaboration with an owner. And in an other hand, with **Pygrid** it wants to offer a deployment module of centralized or decentralized federated learning.
 
 #### PaddleFL of Baidu
 
@@ -97,9 +99,9 @@ In an other hand PaddleFL is a method closer to a deployment strategy. It compos
 
 * The server
 
-* The client that loads their data  and describes their trainning strategie
+* The client that loads their data and describes their trainning strategie
 
-You can find, in the folder of each frameworks, the script to do a federated method on MNIST data set. We will compare now, the resulte of the experiments.
+You can find, in the folder of each frameworks, the script to do a federated method on MNIST dataset. We will compare now, the resulte of the experiments.
 
 <table>
     <thead>

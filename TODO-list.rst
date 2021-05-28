@@ -29,7 +29,7 @@ ToDo-list
     :Target:                SOFTWARE
     :Status:                WIP
     :Problems:              Made the dockerFile for Tensorflow federated and Pysyft
-    :Processing:            DockerFile for Tensorflow federated
+    :Processing:            DockerFile for Tensorflow federated and Pysyft
 
 ####
 

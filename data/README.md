@@ -1,16 +1,16 @@
 # Data
 
 In this folder, we have the data use in the script of the different framework, particularly:
-* The MNIST's data set that contain images of digits
+* The MNIST's dataset that contain images of digits
 * The weather data in France, it corresponding at time-series data.
 
 ### MNIST
 
-You can download the MNIST data set with the following command:
+You can download the MNIST dataset with the following command:
 
     ./mnist.sh
 
-This file downloads the data-set and stock it in a new folder named [mnist_data](/data/MNIST/mnist_data). To work with this data set you will to install **mlxtend**, with the following command:
+This file downloads the dataset and stock it in a new folder named [mnist_data](/data/MNIST/mnist_data). To work with this dataset you will to install **mlxtend**, with the following command:
 
     pip install mlxtend
 
@@ -18,7 +18,7 @@ To do the experiment we have to distribute the data, with the file [data_idx_gen
 
     python data_idx_generator.py
 
-This script returns the file **data_idx.json** that contains the index of MNIST images for all clients. The train data are chosen randomly in the MNIST data set and for the test data we test our model on all the MNIST test data.
+This script returns the file **data_idx.json** that contains the index of MNIST images for all clients. The train data are chosen randomly in the MNIST dataset and for the test data we test our model on all the MNIST test data.
 
 You can see below an extract of the file **data_idx.json**.
 

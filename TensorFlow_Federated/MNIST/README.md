@@ -1,10 +1,10 @@
-# MNIST data set 
+# MNIST dataset 
 
-In this folder, we run a federated learning script with Tensorflow Federated. Moreover, in the script [tensorflow_mninst.py](/TensorFlow_Federated/MNIST/tensorflow_mninst.py), you can find the script that run centralize learning on the same data set.
+In this folder, we run a federated learning script with Tensorflow Federated. Moreover, in the script [tensorflow_mninst.py](/TensorFlow_Federated/MNIST/tensorflow_mninst.py), you can find the script that run centralize learning on the same dataset.
 
 ### Pre-requist 
 
-To work with the MNIST data set, downloaded in the folder [data](/data), you must install **mlxtend**, with the following command:
+To work with the MNIST dataset, downloaded in the folder [data](/data), you must install **mlxtend**, with the following command:
 
     pip3 install mlxtend
 

@@ -8,7 +8,7 @@
 Tensorflow Federated don't offer the privacy of data and the use of GPU. To add the privacy of data we can use [TensorFlowPrivacy](https://github.com/tensorflow/privacy) that allow to train machine-learning models with privacy 
 
 
-In [MNIST](/TensorFlow_Federated/MNIST/) you can find the application of Tensorflow Federated on the MNIST data set.
+In [MNIST](/TensorFlow_Federated/MNIST/) you can find the application of Tensorflow Federated on the MNIST dataset.
 
 
 ### Work environment
@@ -30,21 +30,21 @@ After it, your project is in the folder **My_program** of the docker and your da
 
 Currently, TensorFlow Federated has big community with 240 issues and 73 contributor on GitHub. So, it's easy to find some helped or examples. The script is well commented that makes easy the comprehension of the different function or also the modification of the source script, like with the file [keras_utils.py](/TensorFlow_Federated/MNIST/keras_utils.py) where I modify the class named **_KerasModel's** to return the client metrics during the train or evaluation.
 
-To evaluate this framework, I appliqued TensorFlow Federated on the MNIST data set. You can see the commented script in the folder [MNIST](/TensorFlow_Federated/MNIST/). For my experience I use ten clients and I do three epochs by round.  The data of client is randomly selected on all the train data set of MNIST, the distribution of data is done in the folder [data](/data). And to compare the accuracy of the model we test the model on the test data set of MNIST.
+To evaluate this framework, I appliqued TensorFlow Federated on the MNIST dataset. You can see the commented script in the folder [MNIST](/TensorFlow_Federated/MNIST/). For my experience I use ten clients and I do three epochs by round.  The data of client is randomly selected on all the train dataset of MNIST, the distribution of data is done in the folder [data](/data). And to compare the accuracy of the model we test the model on the test dataset of MNIST.
 
 
 Two models are proposed:
 * A multilayer perceptron compose by two fully connected layer their size is 100, with the ReLU's activation function, and the fully connected output layer, the size is the label size (10) with the softmax's activation function.
 * A convolutional neural network, compose by:
     * A first convolutional layer, the convolution kernel size is 3*3, a total of 32 convolution kernels
-    * A first pooling layer, the pooling size is 2*2, the step size is 1, and the maximum pooling
+    * A first max pooling layer, the pooling size is 2*2, the step size is 1
     * A flatten layer
     * A first fully connected layer, with size 128
     * A fully connected output layer, the size is the label size (10) and with softmax as the activation function
 
 All this models are defined in the file [models.py](/TensorFlow_Federated/MNIST/models.py)
 
-In the following, a summary table of all my accuracies obtain on the test's data set.
+In the following, a summary table of all my accuracies obtain on the test's dataset.
 
 <table>
     <thead>
