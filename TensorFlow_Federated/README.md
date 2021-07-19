@@ -22,7 +22,7 @@ Else you can also install [Docker](https://www.docker.com/), and after, to build
 
 This docker image allow you to run all TensorFlow Federated's script. For this, nothing could be easier, you run the docker image with the following command:
 
-    docker run -it --rm -v <directory of the TensorFlow Federated's project>:/My_program/ -v <directory of the data folder>:/data/ project/tff /bin/sh
+    docker run -it --rm -v <directory of the TensorFlow Federated's project>:/My_program/ -v <directory of the data folder>:/data/ project/tff /bin/bash
 
 After it, your project is in the folder **My_program** of the docker and your data is in the folder **data** of the docker. To take more information about the use of Docker, you can see this [tutorial](https://docs.docker.com/get-started/).
 

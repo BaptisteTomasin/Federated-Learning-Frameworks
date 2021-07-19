@@ -76,3 +76,9 @@ ToDo-list
     :Status:                None
     :Problems:              Try Tensorflow federated with TensorFlow Privacy
     :Processing:            None
+
+
+
+
+
+Revoir la toute premiere partie

@@ -1,6 +1,6 @@
 # PaddleFL of Baidu
 
-[Paddle Federated learning](https://github.com/PaddlePaddle/PaddleFL) is developed by Baidu, a Chinese Company. Based on the framework PaddlePaddle, it gives the possibility to do FL with remote data on GPU or not and with some technical like Federated Averaging, Differential Privacy and Secure Aggregation. In this framework, Baidu offers two packages, **paddle_fl** that allows to work with horizontal partitioning of data and **mpc** that allows to work with vertical partitioning of data. This two method are applicable in simulation or deployment mode.
+[Paddle Federated learning](https://github.com/PaddlePaddle/PaddleFL) is developed by Baidu, a Chinese Company. Based on the framework PaddlePaddle, it gives the possibility to do FL with remote data on GPU or not and with some technical like Federated Averaging, Differential Privacy and Secure Aggregation. In this framework, Baidu offers two packages, **paddle_fl** that allows to work with horizontal partitioning of data and **mpc** that allows to work with vertical partitioning of data. This two methods are applicable in simulation or deployment mode.
 
 In [MNIST](/PaddleFL/MNIST/) you can find the application of PaddleFL on the MNIST's dataset.
 

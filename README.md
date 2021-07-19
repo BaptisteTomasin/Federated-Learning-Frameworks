@@ -1,37 +1,45 @@
 # Federated Learning (FL) Frameworks
 
-The Machine Learning is the fact to offer at the computer  the capacity to "learn" from data. We can separate it in two party. In a first time we build the model from learning data, that we know and that we can analyze it to choose the better model for our task. The second task is the deployment of the model, when our model is optimize and gives us the best score on the validation data, we use it on production.
+The Machine Learning is the fact to offer at the computer  the capacity to "learn" from data. We can separate it in two party. In a first time we build the model from learning data, that we know and that we can analyze it to choose the better model for our task. The second task is the deployment of the model, when our model is optimize and gives us the best score on the validation data, we can use it on production.
 
-Nowadays, for the learning data is collected and centralize by companies, but this approached is not always applicable because in some sectors data are protected for example in Banks or in Medical. to solve this problem a new approach of learning are in development, the Federated Learning.
+Nowadays, the learning data is collected and centralized by companies, but this approached is not always applicable. In sensitives sectors, like healthcare or finance, data are protected. To solve this problem the Federated Learning is a new approach of learning in development.
 
-In this Github we find applications of different FL frameworks like Tensorflow Federated, Pysyft and PaddleFL.
+In this Github we find applications of different FL frameworks like Tensorflow Federated and PaddleFL.
 
 Before beginning to discuss these frameworks, I want to present quickly the idea of the Federated Learning.
 
 ### Federated learning main idea and documents
 
-The approach of Federated Learning is to send the model to the device instead of sending the data of device to the server. The traditional approach is composed by one server and multiple client (= worker). This learning method is an iterative method where each iteration, named a round or a cycle, is composed by four step:
+The main idea of Federated Learning is to send the model to the device instead of sending the data of devices to the server. The traditional approach is composed by one server and multiple clients (i.e. workers). The learning method is an iterative method where each iteration, named a round or a cycle, is composed by four step:
 
 * Step 1: The model is sent to the clients eligible for the round.
 
-* Step 2: Each client trained locally the model with their data.
+* Step 2: Each client computes locally the gradient and updates the model with its data.
 
-* Step 3: The model is sand back to the server, using encrypted communication that assure the privacy of data.
+* Step 3: Local parameters is sand to the server, using encrypted communication that assure the privacy of data.
 
-* Step 4: The server aggregat the model to form a new global model with all model trained locally.
+* Step 4: The server aggregates the model to build a new global model with all models trained locally.
 
-After this learning step, like with a centralize learning, the server sends the global model to the clients that use it, it's the deployment task.
+Here we read that there is only one round, we can iterated these steps until convergence.
 
-The derivative of this approach is without the server, the model is sent between the different clients with peer-to-peer connections. 
+After this learning step, like with a centralize learning, the server sends the global model to the clients that use it, this is the deployment task. The derivative of this approach is without the server, local parameters are shared with local aggregation.
 
-Some benefits are offered by the federated learning. The principal is that personal data remain local so, with the encoding of the local model before the send, data remains private. Moreover, the model is sent to the client to train it, so it's possible to offer a real-time prediction. A third benefits with the federated learning is the reduce hardware infrastructure required for the formation. Indeed, on the fact that the model is learned on the clients' device, is not necessary to have big computational resources to build a machine learning model.
+<p float="left", style="text-align: center;">
+  <img src="/images/FL_schema.png" width="600"/> 
+</p>
 
-But, federated learning have also some challenges to be solved. The principal challenges are :
+
+
+The recent adoptation of law like the GDPR in European Union, the CCPA in  the USA or the PDPA in Singapore, requests transparence on personal data. Or, with the federated learning personal data remain local so, with the encoding of the local model before the send, data remains private, this allows to respect these laws. Moreover, the transparence on personal data allows to take the confiance of user and so a better relation between the company and the user.
+The federated learning have other benefits. Indeed, the model is learned on the clients' device, that allows the company to perform new model without a big data center and big computational resources. So, it offers the possibility of doing machine learning to more companies.
+
+But, federated learning is a new concept and is in development. Basically, the principal challenges are :
+
 * **The communication between sever and clients**, the technics to reduce the times of communication touch many parameters like the number of rounds, the number of epochs the complexity of the model ...
 * **The variability of the clients**, all clients are not always open to participate at the round or also a client can be disconnect during the round
 * **The privacy of the data**, the communication of the models' update have to assure a transparency on the information of client
 
-I give you some documents to learn more about this method and its challenges
+You can find some documents that explain the different challenges of the federated learning, like this document
 
 * [A comic](https://federated.withgoogle.com/) by Google
 * Peter Kairouz, H. Brendan McMahan, Brendan Avent (2019). [Advances and Open Problems in Federated Learning](https://arxiv.org/abs/1912.04977).
@@ -39,60 +47,59 @@ I give you some documents to learn more about this method and its challenges
 
 ### Frameworks
 
-In this document we will compare the following open-source FL frameworks:
-* Tensoflow Federated (TFF) of Google Inc
-* Paddle Federated Learning (PaddleFL) of Baidu
-* Pysyft of the open community OpenMined
+In this document we will compare open-source federated learning frameworks:
+* Tensoflow Federated (TFF) by Google Inc
+* Paddle Federated Learning (PaddleFL) by Baidu
+<!-- * Pysyft of the open community OpenMined -->
 <!-- * IBM Federated Learning of IBM -->
 
-Their performance are evaluate on two datasets:
-* The MNIST's dataset that contain images of digits
-* The weather data in France, it corresponding at time-series data.
+Their performances are evaluate on two data sets, the first is the MNIST data set that contains images of digits and the second is the Arma series, that corresponding at time-series data.
 
 These two dataset are imported in [data](/data)
 
-In this project these frameworks are evaluate in many aspects like:
+In this project the frameworks are evaluated in many aspects like :
 
 * Simplicity of the installation
 * Maturity, documentation and community
-* Comparison of the built model’s accuracy and of the training process performance
-* Capacity to do simulation and to deploy solutions
+* Comparison of the built model’s accuracy and the training process performance
+* Capacity to do studies and deployments
 
+The community around the federated learning increased these last years, so you can find other open-source framework like FATE by Webank's AI Department, Flowers, etc. that emerge but their are not part of the scope of this study.
 
 > My device is an Hp EliteBook, without GPU, composed by an Intel Core i7-6600U, 2.60 GHz 2.81 GHz and 16 Go of RAM
 
 
 #### Tensorflow Federated of Google Inc
 
-[Tensorflow Federated](https://github.com/tensorflow/federated) is an open source framework, developed by Google Inc. Based on the framework Tensorflow, it gives the possibility to simulate a Federated Learning. Tensorflow Federated allows to developed aggregates or learning methods. Tensoflow federated is composed by two layers:
+[Tensorflow Federated](https://github.com/tensorflow/federated) is an open source framework, developed by Google Inc. Based on Tensorflow, it gives the possibility to simulate a Federated Learning strategy. Tensorflow Federated allows to developed aggregates or learning methods. It is composed by two layers:
 
-* Federated Learning (FL) API, this layer is the high-level of the framework. It allows to do federated tranning and evaluation, with the utils give by the API 
+* Federated Learning (FL) API, this layer is the high-level of the framework. It allows to do federated tranning and evaluation, with the utils given by the API 
 * Federated Core (FC) API, this layer allows to test and creat new federated algorithm based on TensorFlow
 
-Tensorflow Federated don't offer the privacy of data and the use of GPU. To add the privacy of data we can use [TensorFlowPrivacy](https://github.com/tensorflow/privacy) that allow to train machine-learning models with privacy 
+Tensorflow Federated don't offer the use of GPU or also the privacy of data. To add the privacy of data we can use [TensorFlowPrivacy](https://github.com/tensorflow/privacy) that allow to train machine-learning models with privacy 
 
 
-#### Pysyft of the open community OpenMined
+<!-- #### Pysyft of the open community OpenMined
 
-[Pysyft](https://github.com/OpenMined/PySyft) is developed by the open community OpenMined. It allows to perform Federated Learning within the main Deep Learning frameworks like PyTorch, Keras and TensorFlow. It combines federated learning, secured multiple-party computations and differential privacy to train robust privacy neural networks. With **Duet** it allows a data scientist to perform a model on remote data in collaboration with an owner. And in an other hand, with **Pygrid** it wants to offer a deployment module of centralized or decentralized federated learning.
+[Pysyft](https://github.com/OpenMined/PySyft) is developed by the open community OpenMined. It allows to perform Federated Learning within the main Deep Learning frameworks like PyTorch, Keras and TensorFlow. It combines federated learning, secured multiple-party computations and differential privacy to train robust privacy neural networks. With **Duet** it allows a data scientist to perform a model on remote data in collaboration with an owner. And in an other hand, with **Pygrid** it wants to offer a deployment module of centralized or decentralized federated learning. -->
 
 #### PaddleFL of Baidu
 
-[Paddle Federated learning](https://github.com/PaddlePaddle/PaddleFL) is developed by Baidu, a Chinese Company. Based on the framework PaddlePaddle, it gives the possibility to do FL with remote data on GPU or not and with some technical like Federated Averaging, Differential Privacy and Secure Aggregation. In this framework, Baidu offers two packages, **paddle_fl** that allows to work with horizontal partitioning of data and **mpc** that allows to work with vertical partitioning of data. This two method are applicable in simulation or deployment mode.
+[Paddle Federated learning](https://github.com/PaddlePaddle/PaddleFL) is developed by Baidu, a Chinese Company. Based on PaddlePaddle, it gives the possibility to do FL with remote data on GPU or not and with some technical like Federated Averaging, Differential Privacy and Secure Aggregation. In this framework, Baidu offers two packages, **paddle_fl** that allows to work with horizontal partitioning of data and **mpc** that allows to work with vertical partitioning of data. This two methods are applicable in simulation or deployment mode.
 
 ### Comparison
 
 We can find, in the folder of each frameworks, a Readme where I propose an analyze more complete on each frameworks.
 
-I'm going to start my comparison with the ease of finding documentation or examples and doing the installation of these frameworks. And in a second time I'm going to compare the simplicity of madding a federated learning strategy and the different results obtain with these frameworks
+I'm going to start my comparison with the ease of finding documentation or examples and doing the installation of these frameworks. In a second time I'm going to compare the simplicity of madding a federated learning strategy and the different results obtain with these frameworks
 
-It's easier to learn the federated learning with Tensorflow federated than PaddleFL due to it's the most famous with Pysyft. It has some examples or documentations in English on the Internet and its important community allows to has easy some help. Conversely, PaddleFl is easier to use with a little bases in federated learning because it has a small community and it doesn't have a lot of document or example on the internet.
+It's easier to learn the federated learning with Tensorflow federated than PaddleFL due to it's the most famous with Pysyft. It has some examples or documentations in English on Internet and its important community allows to have easy some help. Conversely, PaddleFl is easier to use with a little bases in federated learning because it has a small community and it doesn't have a lot of document or example on the internet.
 
 Moreover, PaddleFL requires many dependencies that give the installation more difficult than Tensorflow federated who it's installed with pip, this explains why Baidu recommend using their docker.
 
-Now that we have see that Tensorflow federated is the most intuitive, we wat to compare the simplicity of madding a federated learning strategy and the different results obtain with these frameworks.
+Now that we have see that Tensorflow federated is the most intuitive, we want to compare the simplicity of madding a federated learning strategy and the different results obtain with these frameworks.
 We have two types of structure on the one hand, Tensorflow federated, who use a simple script and simulate a federated learning thanks to a list that contains the data of each client (the first element is the data of the first client ...) and it browse this list to train the model on each client. 
-In an other hand PaddleFL is a method closer to a deployment strategy. It composes by four scripts :
+In an other hand PaddleFL is a method closer to a deployment strategy. It is composed by four scripts :
 * The master that describes the FL strategy
 
 * The scheduler that manages the exchange between the server and the clients
@@ -169,7 +176,7 @@ This table demonstrate that in general the run takes more time when we use the f
 
 The cause of this slowdown is the communication time between the server and the workers or the number of cycle more important. So it's important to choose a good compromise between the number of cycle and the number of model parameters.
 
-Tensorflow federated don't have communication time because it offers just the possibility to made simulation of federated learning. But, we can see that it takes more time and more round to converge with the CNN.
+Tensorflow federated don't have communication time because it offers just the possibility to made simulation of federated learning. But, it don't parallelize learning task so we can see that it takes more time and more round to converge with the CNN.
 
 Principaly, PaddleFL offer a learning with less epoch and round, but we can see on the Multi-layer perceptron that the time of communication have an impact on the time of convergence (more time for less rounds). But, it's not the same for the CNN, due to PaddleFL run the script of clients in parallel, we can see that it takes less times than Tensorflow Federated.
 
@@ -177,7 +184,7 @@ Principaly, PaddleFL offer a learning with less epoch and round, but we can see 
 
 These are two different framework. Tensorflow federated is easy to use because it's easy to find some help, example or document in English. But, it is a research framework that offer the possibility to do some experiment like to build your personal aggregate method, but it can't be used in deployment.
 
-In an other hand, PaddleFL is more oriented towards a deployment strategy, where each client are are connected with an IP address to the server, and where data can be in remote. But, the main problem of this framework is the lack of document or example that who gives the use more difficult.
+In an other hand, PaddleFL is more oriented towards a deployment strategy, where each client are connected with an IP address to the server, and where data can be in remote. But, the main problem of this framework is the lack of document or example that who gives the use more difficult.
 
 To conclude, the accuracies obtain with these frameworks are the same, but the time of convergence is variable, PaddleFL is better than Tensorflow federated for the CNN, but not for the Multilayer perceptron. So the choice of the framework depends on the application that your desire do.
 

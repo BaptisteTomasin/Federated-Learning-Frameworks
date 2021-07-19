@@ -1,8 +1,8 @@
 # Data
 
-In this folder, we have the data use in the script of the different framework, particularly:
+In this folder, we have the data used in the script of the different framework, particularly:
 * The MNIST's dataset that contain images of digits
-* The weather data in France, it corresponding at time-series data.
+* The Arma series, that corresponding at time-series data.
 
 ### MNIST
 
@@ -10,7 +10,7 @@ You can download the MNIST dataset with the following command:
 
     ./mnist.sh
 
-This file downloads the dataset and stock it in a new folder named [mnist_data](/data/MNIST/mnist_data). To work with this dataset you will to install **mlxtend**, with the following command:
+This file downloads the dataset and stock it in a new folder named [mnist_data](/data/MNIST/mnist_data). To work with this dataset you will install **mlxtend**, with the following command:
 
     pip install mlxtend
 
@@ -56,4 +56,4 @@ You can also activate the variable **save_hist** in [data_idx_generator.py](/dat
   <img src="/images/hist_client_6.png" width="300"/>
 </p>
 
-### Weather data
+### Arma series
