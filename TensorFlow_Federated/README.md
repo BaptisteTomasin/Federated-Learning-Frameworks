@@ -1,11 +1,11 @@
 # Tensorflow Federated of Google Inc
 
-[Tensorflow Federated](https://github.com/tensorflow/federated) is an open source framework, developed by Google Inc. Based on the framework Tensorflow, it gives the possibility to simulate a Federated Learning. Tensorflow Federated allows to developed aggregates or learning methods. Tensoflow federated is composed by two layers:
+[Tensorflow Federated](https://github.com/tensorflow/federated) is an open-source framework, developed by Google Inc. Based on Tensorflow, it allows  to simulate a Federated Learning. Tensorflow Federated allows to developed aggregates or learning methods. Tensoflow federated is composed by two layers:
 
-* Federated Learning (FL) API, this layer is the high-level of the framework. It allows to do federated tranning and evaluation, with the utils give by the API 
-* Federated Core (FC) API, this layer allows to test and creat new federated algorithm based on TensorFlow
+* Federated Learning (FL) API, this layer is the high-level of the framework. It allows doing federated training and evaluation, with the utils give by the API 
+* Federated Core (FC) API, this layer allows to test and devise new federated algorithms based on TensorFlow
 
-Tensorflow Federated don't offer the privacy of data and the use of GPU. To add the privacy of data we can use [TensorFlowPrivacy](https://github.com/tensorflow/privacy) that allow to train machine-learning models with privacy 
+Tensorflow Federated don't offer the privacy of data and the use of GPU. To add the privacy of data, we can add [TensorFlowPrivacy](https://github.com/tensorflow/privacy) that allow to train machine-learning models with privacy.
 
 
 In [MNIST](/TensorFlow_Federated/MNIST/) you can find the application of Tensorflow Federated on the MNIST dataset.
@@ -13,24 +13,24 @@ In [MNIST](/TensorFlow_Federated/MNIST/) you can find the application of Tensorf
 
 ### Work environment
 
-To beginning we will create our work environment. 
-If you are on Ubuntu or MacOS, you can install it with this [instruction](https://www.tensorflow.org/federated/install)
+To beginning, we will establish our work environment. 
+With Ubuntu or MacOS, you can install it with this [instruction](https://www.tensorflow.org/federated/install)
 
-Else you can also install [Docker](https://www.docker.com/), and after, to build the image with this Dockerfile the command is the following:
+Else you can also install [Docker](https://www.docker.com/), and build the image, from the Dockerfile, with the following command:
 
     docker build -t project/tff <directory to the Dockerfile>
 
-This docker image allow you to run all TensorFlow Federated's script. For this, nothing could be easier, you run the docker image with the following command:
+This docker image allows you to execute all TensorFlow Federated script. For this, nothing could be easier, you run the docker image with the following command:
 
-    docker run -it --rm -v <directory of the TensorFlow Federated's project>:/My_program/ -v <directory of the data folder>:/data/ project/tff /bin/bash
+    docker run -it --rm -v <directory of the TensorFlow Federated project>:/My_program/ -v <directory of the data folder>:/data/ project/tff /bin/bash
 
-After it, your project is in the folder **My_program** of the docker and your data is in the folder **data** of the docker. To take more information about the use of Docker, you can see this [tutorial](https://docs.docker.com/get-started/).
+After in the docker, your project is in the folder **My_program** and your data in the folder **data**. To acquire more information about the use of Docker, you can observe this [tutorial](https://docs.docker.com/get-started/).
 
-### Analyse of this framework
+### Analyze of this framework
 
-Currently, TensorFlow Federated has big community with 240 issues and 73 contributor on GitHub. So, it's easy to find some helped or examples. The script is well commented that makes easy the comprehension of the different function or also the modification of the source script, like with the file [keras_utils.py](/TensorFlow_Federated/MNIST/keras_utils.py) where I modify the class named **_KerasModel's** to return the client metrics during the train or evaluation.
+Currently, TensorFlow Federated has massive community with 240 issues and 73 contributor on GitHub. Consequently, it's effortless to find some helped or examples. The script is well commented that makes easy the comprehension of the diverse function or also the modification of the source script, like with the file [keras_utils.py](/TensorFlow_Federated/MNIST/keras_utils.py) where I modify the class named **_KerasModel's** to return the client metrics during the train or evaluation.
 
-To evaluate this framework, I appliqued TensorFlow Federated on the MNIST dataset. You can see the commented script in the folder [MNIST](/TensorFlow_Federated/MNIST/). For my experience I use ten clients and I do three epochs by round.  The data of client is randomly selected on all the train dataset of MNIST, the distribution of data is done in the folder [data](/data). And to compare the accuracy of the model we test the model on the test dataset of MNIST.
+To evaluate this framework, I appliqued TensorFlow Federated on the MNIST dataset. You can follow the commented script in the folder [MNIST](/TensorFlow_Federated/MNIST/). For my experience I manage ten clients and do three epochs by round.  The data of the client are randomly selected on all the train dataset of the MNIST, the distribution of the data is done in the folder [data](/data). And to compare the accuracy of the model we test the model on the test dataset of MNIST.
 
 
 Two models are proposed:
@@ -42,9 +42,9 @@ Two models are proposed:
     * A first fully connected layer, with size 128
     * A fully connected output layer, the size is the label size (10) and with softmax as the activation function
 
-All this models are defined in the file [models.py](/TensorFlow_Federated/MNIST/models.py)
+All these models are defined in the file [models.py](/TensorFlow_Federated/MNIST/models.py)
 
-In the following, a summary table of all my accuracies obtain on the test's dataset.
+In the following, a summary table of all my accuracies gets on the test's dataset.
 
 <table>
     <thead>
@@ -71,7 +71,7 @@ In the following, a summary table of all my accuracies obtain on the test's data
     </tbody>
 </table>
 
-This table shows us that the Federated Averaging method don't have a big impact on the accuracy of the model. We lost approximately 0.04 in accuracy. But, the federated learning take more iterations, we can ask if this has a big impact on the time of convergences.
+This table demonstrates that the Federated Averaging method doesn't provide an enormous impact on the accuracy of the model. We lost approximately 0.04 in accuracy. But, the federated learning take more iterations, we can ask if this produces a significant impact on the time of convergences.
 
 <table>
     <thead>
@@ -98,8 +98,8 @@ This table shows us that the Federated Averaging method don't have a big impact 
     </tbody>
 </table>
 
-This second table demonstrate that the run takes more time when we use the federated learning. Tensorflow federated don't have communication time because it offers just the possibility to made simulation of federated learning. So the cause of this slowdown is the number of loop more important, for converge. You can check the increase of times with the CNN (an important number of parameters) where the time for execution is fourteen times more important and the number of rounds is six times more important than the number of epochs.
+This second table demonstrates the run requires more time when we use the federated learning. Tensorflow federated don't have communication time because it offers just the possibility to made simulation of federated learning. Therefore, the cause of this slowdown is the number of loops more important, for converging. You can check the increase of times with the CNN (an important number of parameters). In fact, the time for execution is fourteen times more important and the number of rounds is six times more important than the number of epochs.
 
-We can say that this framework is a good tool to simulate some federated learning strategies because, with the different examples, issues and error report finding on the internet, it's easy to use it. The main problem of this framework that it doesn't offer the possibility to use it in deployment. But it's  updated quite often, we can hope to view quickly a deployment version.
+We can say this framework remains a good tool to simulate some federated learning strategies because with the different examples, issues and error report finding on the internet, it's easy to use it. The principal problem of this framework that it doesn't offer deployment mode. But frequently new updates are published, we can hope to view quickly a deployment version.
 
-The next step of the experiment can be to compare the performance of TensorFlow Federated with TensorFlow Privacy and show if it increases the time of execution and if it has a big impact on the accuracy of the model.
+The next step of the experiment can be to compare the performance of TensorFlow Federated with TensorFlow Privacy and show if it increases the time of execution and if it includes an important impact on the accuracy of the model.

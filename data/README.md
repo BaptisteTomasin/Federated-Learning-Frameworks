@@ -1,6 +1,6 @@
 # Data
 
-In this folder, we have the data used in the script of the different framework, particularly:
+This folder includes the data employed in the script of the different frameworks, particularly:
 * The MNIST's dataset that contain images of digits
 * The Arma series, that corresponding at time-series data.
 
@@ -10,11 +10,11 @@ You can download the MNIST dataset with the following command:
 
     ./mnist.sh
 
-This file downloads the dataset and stock it in a new folder named [mnist_data](/data/MNIST/mnist_data). To work with this dataset you will install **mlxtend**, with the following command:
+This file downloads the dataset and stock it in a new folder named [mnist_data](/data/MNIST/mnist_data). To work with this dataset, you will install **mlxtend**, with the following command:
 
     pip install mlxtend
 
-To do the experiment we have to distribute the data, with the file [data_idx_generator.py](/data/MNIST/data_idx_generator.py). You can run it with the following command:
+To carry out the experiment, we have to distribute the data, with the file [data_idx_generator.py](/data/MNIST/data_idx_generator.py). You can execute it with the following command:
 
     python data_idx_generator.py
 
@@ -48,7 +48,7 @@ You can see below an extract of the file **data_idx.json**.
         ...
     }
 
-You can also activate the variable **save_hist** in [data_idx_generator.py](/data/MNIST/data_idx_generator.py), that allows you to display the histogram of the distribution and so check the non-IID of data between the different clients. For example, on three different clients, I obtain this distribution:
+You can also activate the variable **save_hist** in [data_idx_generator.py](/data/MNIST/data_idx_generator.py), that allows you to display the histogram of the distribution and so check the non-IID of data between the diverse clients. For example, on three clients, I get this distribution:
 
 <p float="left", style="text-align: center;">
   <img src="/images/hist_client_2.png" width="300"/> 

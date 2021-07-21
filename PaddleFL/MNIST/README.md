@@ -1,31 +1,31 @@
 # MNIST dataset 
 
-In this folder, we run a federated learning script with PaddleFL. Moreover, in the script [paddlepaddle_mninst.py](/PaddleFL/MNIST/paddlepaddle_mninst.py), you can find the script that run centralize learning on the same dataset with paddelpaddle.
+This folder includes a federated learning strategy with PaddleFL. In addition, in [paddlepaddle_mninst.py](/PaddleFL/MNIST/paddlepaddle_mninst.py), you can get the script that run centralizes learning on the same dataset with paddelpaddle.
 
-### Pre-requist 
+### Prerequisites 
 
-To work with the mnist dataset, downloaded in the folder [data](/data), you must to install **mlxtend**, with the following command:
+To work with the MNIST dataset, downloaded in the folder [data](/data), you must to install **mlxtend**. Use the following command:
 
     pip3 install mlxtend
 
 ### Run script
 
-To begin the experiment we have to generate the **data_idx.json** file. If it is not already been done, you can you refer to the [data](/data) folder.
+To start the experiment, we have to generate the **data_idx.json** file. If it is not already been done, you can go to the [data](/data) folder.
 
-Now that we have the distribution of data, we can run and stop the federated learning script with the following commands:
+Now that the data are distributed, we can execute and stop the federated learning script with the following commands:
 
     # Run the FL
     ./run.sh
     # Stop the FL
     ./stop.sh
 
-To conclude, you can run the paddlepaddle's script with this command, to compare your results:
+To conclude, you can execute the paddlepaddle's script with this command, to compare your results:
 
     python3 paddlepaddle_mninst.py
 
 > Remarks: 
 > * For the federated program, you can see the test accuracy in the log of the client 0
-> * To display the graph of metrics for each clients and for test data, you can use [parser.py](/PaddleFL/MNIST/parser.py) with the following command: 
+> * To display the graph of metrics for each client and test data, you can use [parser.py](/PaddleFL/MNIST/parser.py) with the following command: 
 >
 >       python3 parser.py --path <directory to the log file or the log folder>
 >

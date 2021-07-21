@@ -1,35 +1,35 @@
 # MNIST dataset 
 
-In this folder, we run a federated learning script with Tensorflow Federated. Moreover, in the script [tensorflow_mninst.py](/TensorFlow_Federated/MNIST/tensorflow_mninst.py), you can find the script that run centralize learning on the same dataset.
+In this folder, we establish a federated learning strategy with Tensorflow Federated. Additionally, in[tensorflow_mninst.py](/TensorFlow_Federated/MNIST/tensorflow_mninst.py), you can find the script that run centralizes learning on the same dataset.
 
-### Pre-requist 
+### Prerequisites 
 
-To work with the MNIST dataset, downloaded in the folder [data](/data), you must install **mlxtend**, with the following command:
+To work with the MNIST dataset, downloaded in the folder [data](/data), you must to install **mlxtend**. Use the following command:
 
     pip3 install mlxtend
 
 ### Run script
 
-To begin the experiment we have to generate the **data_idx.json** file. If it is not already been done, you can you refer to the [data](/data) folder.
+To begin the experiment we have to generate the **data_idx.json** file. If it is not already been done, you can go to the [data](/data) folder.
 
-Now that we have the distribution of data, we can run the federated learning script with the following command:
+Now that the data are distributed, we can perform the federated learning script with the following command:
 
     # Run the FL
     python tensorflow_federated_mninst.py
 
-To conclude, you can run the tensorflow script with this command, to compare your results:
+To conclude, you can execute the tensorflow script with this command, to compare your results:
 
     python tensorflow_mninst.py
 
 ### Remarks
 
-In [keras_utils.py](/TensorFlow_Federated/MNIST/keras_utils.py) you can find the modified script of the source file keras_utils.py that allows to take the client's metrics during the training and evaluation.
+In [keras_utils.py](/TensorFlow_Federated/MNIST/keras_utils.py) you can get the modified script of the source file keras_utils.py that allows to take the client's metrics during the training and evaluation.
 
-Moreover the output of this two script, return a log folder that can be used to analyze the different metrics (clients and server) with Tensorboard. To display the Tensorboard interface you can use this command:
+More the output of these two scripts returns a log folder that can be used to analyze the diverse metrics (clients and server) with Tensorboard. To display the Tensorboard interface, you can use this command:
 
     tensorboard --logdir <directory to the log folder>
 
-For example, with the CNN, I obtain this graph:
+For example, with the CNN, I get this graph:
 <table>
     <tr>
         <th colspan=2>CNN Tensorflow Federated</th>

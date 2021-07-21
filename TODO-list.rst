@@ -13,7 +13,7 @@ Info
 
 * Status : It's the state of the work
 
-        - None : Not beguining
+        - None : Not beginning
         - WIP : Work In Progress
         - Done: Work finish
 
@@ -76,9 +76,3 @@ ToDo-list
     :Status:                None
     :Problems:              Try Tensorflow federated with TensorFlow Privacy
     :Processing:            None
-
-
-
-
-
-Revoir la toute premiere partie
