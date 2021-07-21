@@ -25,7 +25,7 @@ Here we read that there is only one round, we can iterated these steps until con
 After this learning step, like with a centralize learning, the server sends the global model to the clients that employ it, this is the deployment task. The derivative of this approach is without the server, local parameters are shared with local aggregation.
 
 <p float="left", style="text-align: center;">
-  <img src="/images/FL_schema.png" width="600"/> 
+  <img src="/images/FL_schema.PNG" width="600"/> 
 </p>
 
 
