@@ -1,0 +1,32 @@
+{
+    "strategy": "Type of strategy: centralized or federated",
+    "centralized": 
+    {
+        "data_loader": "MNIST_loader",
+        "model_name": "Name of the model class: Convolutional_NN, Multilayer_perceptron",
+        "input_shape": [784],
+        "label_shape": [-1, 10],
+        "num_epoch" : 100,
+        "learning_rate": 0.01,
+        "batch_size": 64,
+        "logdir":"path to the log folder",
+        "data": "path to the mnist data folder, if null data are download",
+        "distribution": "path to clients_distribution.json, if null data are distributed",
+        "number_of_clients": 10
+    },
+    "federated": 
+    {
+        "data_loader": "MNIST_loader",
+        "model_name": "Name of the model class: Convolutional_NN, Multilayer_perceptron",
+        "input_shape": [784],
+        "label_shape": [-1, 10],
+        "num_round": 200,
+        "num_epoch" : 3,
+        "learning_rate": 0.01,
+        "batch_size": 64,
+        "logdir":"path to the log folder",
+        "data": "path to the mnist data folder, if null data are download",
+        "distribution": "path to clients_distribution.json, if null data will be distribute",
+        "number_of_clients": 10
+    }
+}

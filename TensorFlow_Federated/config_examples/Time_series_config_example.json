@@ -1,0 +1,36 @@
+{
+    "strategy": "Type of strategy: centralized or federated",
+    "centralized": 
+    {
+        "data_loader": "Time_series_loader",
+        "model_name": "Name of the model class: Sinple_rnn",
+        "input_shape": [20, 1],
+        "label_shape": [-1 , 1, 1],
+        "num_epoch" : 10000,
+        "learning_rate": 0.003,
+        "batch_size": 32,
+        "lookback": 20,
+        "lookforward":1,
+        "logdir":"path to the log folder",
+        "data": "path to the time series data",
+        "distributed": "true or false if false time series will be distribute",
+        "number_of_clients": 10
+    },
+    "federated": 
+    {
+        "data_loader": "Time_series_loader",
+        "model_name": "Name of the model class: Sinple_rnn",
+        "input_shape":  [20, 1],
+        "label_shape": [-1 , 1, 1],
+        "num_round": 10000,
+        "num_epoch" : 3,
+        "learning_rate":  0.003,
+        "batch_size": 32,
+        "lookback": 20,
+        "lookforward":1,
+        "logdir":"path to the log folder",
+        "data": "path to the time series data",
+        "distributed": "true or false if false time series will be distribute",
+        "number_of_clients": 10
+    }
+}

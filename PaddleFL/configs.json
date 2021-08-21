@@ -1,0 +1,42 @@
+{
+    "strategy": "centralized",
+    "centralized": 
+    {
+        "data_loader": "MNIST_loader",
+        "model_name": "Multilayer_perceptron",
+        "input_shape": [1, 28, 28],
+        "label_shape": [1],
+        "number_of_class" : 10,
+        "num_epoch" : 100,
+        "learning_rate": 0.1,
+        "batch_size": 64,
+        "logdir":"results/log_cenralized",
+        "data":  null,
+        "distribution": "../data/mnist_clients_distribution_10_clients.json",
+        "number_of_clients": 10,
+        "input_dtype" : "float32",
+        "label_dtype" : "int64"
+    },
+    "federated": 
+    {
+        "data_loader": "MNIST_loader",
+        "model_name": "Multilayer_perceptron",
+        "input_shape": [1, 28, 28],
+        "label_shape": [1],
+        "number_of_class" : 10,
+        "num_round": 300,
+        "num_epoch" : 3,
+        "learning_rate": 0.1,
+        "batch_size": 64,
+        "logdir":"results/log_federated",
+        "data":  null,
+        "distribution": "../data/mnist_clients_distribution_10_clients.json",
+        "number_of_clients": 10,
+        "input_dtype" : "float32",
+        "label_dtype" : "int64",
+        "job_path": "/job_path",
+        "scheduler_port": 9091,
+        "server_port": 8181,
+        "seed_of_clients_port": 9000
+    }
+}

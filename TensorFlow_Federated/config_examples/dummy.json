@@ -1,0 +1,34 @@
+{
+    "strategy": "Type of strategy: centralized or federated",
+    "centralized": 
+    {
+        "data_loader": "Name of the data loader class : MNIST_loader, Time_series_loader",
+        "model_name": "Name of the model class: Convolutional_NN, Multilayer_perceptron, Multi_RNN, Single_rnn",
+        "input_shape": "Dimension of the input",
+        "label_shape": "Dimension of the output",
+        "num_epoch" : "Number of epoch",
+        "learning_rate": "Learning rate value",
+        "batch_size": "Batch size value",
+        "logdir":"path to the log folder",
+        "number_of_clients": "Number of clients",
+        "prefetch_buffer" : "prefetch buffer value",
+        "data": "path to the data",
+        "_commentary": "add some keys necessary for the data loader class"        
+    },
+    "federated": 
+    {
+        "data_loader": "Name of the data loader class : MNIST_loader, Time_series_loader",
+        "model_name": "Name of the model class: Convolutional_NN, Multilayer_perceptron, Multi_RNN, Single_rnn",
+        "input_shape": "Dimension of the input",
+        "label_shape": "Dimension of the output",
+        "num_round": "Number of round",
+        "num_epoch" : "Number of epoch",
+        "learning_rate": "Learning rate value",
+        "batch_size": "Batch size value",
+        "logdir":"path to the log folder",
+        "data": "path to the data",
+        "number_of_clients": "Number of clients",
+        "prefetch_buffer" : "prefetch buffer value",
+        "_commentary": "add some keys necessary for the data loader class"   
+    }
+}

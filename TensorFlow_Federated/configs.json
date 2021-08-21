@@ -1,0 +1,32 @@
+{
+    "strategy": "centralized",
+    "centralized": 
+    {
+        "data_loader": "MNIST_loader",
+        "model_name": "Multilayer_perceptron",
+        "input_shape": [784],
+        "label_shape": [-1, 10],
+        "num_epoch" : 100,
+        "learning_rate": 0.01,
+        "batch_size": 64,
+        "logdir":"results/log_cenralized",
+        "data": null,
+        "distribution": "../data/mnist_clients_distribution_10_clients.json",
+        "number_of_clients": 10
+    },
+    "federated": 
+    {
+        "data_loader": "MNIST_loader",
+        "model_name": "Multilayer_perceptron",
+        "input_shape": [784],
+        "label_shape": [-1, 10],
+        "num_round": 200,
+        "num_epoch" : 3,
+        "learning_rate": 0.01,
+        "batch_size": 64,
+        "logdir":"results/log_federated",
+        "data": null,
+        "distribution": "../data/mnist_clients_distribution_10_clients.json",
+        "number_of_clients": 10
+    }
+}

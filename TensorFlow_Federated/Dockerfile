@@ -1,7 +1,9 @@
 FROM python:3.8.5-slim
 
-RUN pip install --upgrade pip
+COPY requirements.txt ./requirements.txt
 
-RUN pip install tensorflow-federated==0.18.0
-
-RUN pip install mlxtend
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt && \
+    rm ./requirements.txt && \
+    apt update && \
+    apt install -y jq
