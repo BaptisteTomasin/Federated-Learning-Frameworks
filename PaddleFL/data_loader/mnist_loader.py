@@ -52,12 +52,12 @@ class MNIST_loader:
             Load the mnist files
         """
         self._x_train, self._y_train = loadlocal_mnist(
-                images_path=join('mnist_data','train-images-idx3-ubyte'), 
-                labels_path=join('mnist_data','train-labels-idx1-ubyte'))
+                images_path=join(self.mnist_path,'train-images-idx3-ubyte'), 
+                labels_path=join(self.mnist_path,'train-labels-idx1-ubyte'))
 
         self._x_test, self._y_test = loadlocal_mnist(
-                images_path=join('mnist_data','t10k-images-idx3-ubyte'), 
-                labels_path=join('mnist_data','t10k-labels-idx1-ubyte'))
+                images_path=join(self.mnist_path,'t10k-images-idx3-ubyte'), 
+                labels_path=join(self.mnist_path,'t10k-labels-idx1-ubyte'))
 
 
     def load_distribution(self):
