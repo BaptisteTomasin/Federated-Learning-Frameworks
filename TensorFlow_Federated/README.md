@@ -108,7 +108,7 @@ In the following, a summary table of all my accuracies obtains from the test dat
 
 
 <p float="left", style="text-align: center;">
-  <img src="/images/mnist_tensorflow_results.png"/> 
+  <img src="/images/mnist_tensorflow_results.PNG"/> 
 </p>
 
 As a reminder, an epoch corresponds to the reading of all the learning examples. In the case of the federated network, a global epoch is realized when each client has realized an epoch which corresponds to the number of rounds x the number of epochs per client.

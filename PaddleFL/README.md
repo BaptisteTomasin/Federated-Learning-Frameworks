@@ -115,7 +115,7 @@ Each model is trained until the convergence or the overfitting. If the model con
 In the following, a summary table of all my accuracies obtains on the test's dataset.
 
 <p float="left", style="text-align: center;">
-  <img src="/images/mnist_paddlepaddle_results.png"/> 
+  <img src="/images/mnist_paddlepaddle_results.PNG"/> 
 </p>
 
 As a reminder, an epoch corresponds to the reading of all the learning examples. In the case of the federated network, a global epoch is realized when each client has realized an epoch which corresponds to the number of rounds x the number of epochs per client.

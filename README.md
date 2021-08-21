@@ -106,7 +106,7 @@ Firstly a comparison of these frameworks are done in the following table (docume
 
 
 <p float="left", style="text-align: center;">
-  <img src="/images/framework_comparison.png"/> 
+  <img src="/images/framework_comparison.PNG"/> 
 </p>
 
 Based on facts, Tensorflow federated is more used than PaddleFL which explain the number of example on Internet more important that makes learning of the FL bases faster with TFF.
@@ -127,7 +127,7 @@ You can find, in the folder of each framework, the script to perform a federated
 For the experience, the strategy is composed by 10 clients that train the model locally on 3 epochs by round. The data of the client are randomly selected on all the train dataset of the MNIST, the distribution of the data, used in my study, is done in the [data](/data) folder. For the training, we will use the SGD optimizer with a learning rate of 0.1. To compare the accuracy of the model, obtains with the centralized and the federated strategies, we test the model on the test dataset of MNIST. 
 
 <p float="left", style="text-align: center;">
-  <img src="/images/mnist_results.png"/> 
+  <img src="/images/mnist_results.PNG"/> 
 </p>
 
 As a reminder, an epoch corresponds to the reading of all the learning examples. In the case of the federated network, a global epoch is realized when each client has realized an epoch which corresponds to the number of rounds x the number of epochs per client.
