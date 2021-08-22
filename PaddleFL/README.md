@@ -125,6 +125,6 @@ As a reminder, an epoch corresponds to the reading of all the learning examples.
 * With Federated Averaging, the accuracies is not impacted.
 * The run time is more important when we use the federated learning. Due to the communication time between the server and the workers or the number of loops more important.
 * Small model take more loops to converge, so more communication between the server and the workers that increase the run time
-* Due to the parallelisation of the local training and the small increase in the number of loops, the CNN does not take much extra time during the federated training compared to the centralised training. The extra time is the communication time
+* Due to the parallelization of the local training and the small increase in the number of loops, the CNN does not take much extra time during the federated training compared to the centralised training. The extra time is the communication time
 
 This framework offers many interesting strategies of FL like Federated Averaging, Differential Privacy and Secure Aggregation and the possibility to made simulation or deployment. But we have to wait some times to detect if it's evolved, if the community increases, if more examples are developed and if an English documentation is published.
