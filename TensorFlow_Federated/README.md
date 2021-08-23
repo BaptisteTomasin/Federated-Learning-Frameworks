@@ -116,8 +116,8 @@ As a reminder, an epoch corresponds to the reading of all the learning examples.
 **Notes:**
 
 * With Federated Averaging, the accuracies is not impacted. We lost approximately 0.1 accuracy.
-* The federated learning take more iterations.
-* The run time is more important when we use the federated learning. Due to number of iteration more important and the locals training, with TFF, are not executing in parallel.
+* The federated learning takes more iterations.
+* The runtime is more important when we use the federated learning. Due to the higher number of iteration and the locals training, with TFF, are not executing in parallel.
 * Increase of times and iteration where the number of parameters is important (i.e. CNN: time is x13 more important).
 
 We can say this framework remains a good tool to simulate some federated learning strategies because with the different examples, issues and error report finding on the internet, it's easy to use it. The principal problem of this framework that it doesn't offer deployment mode. But frequently new updates are published, we can hope to view quickly a deployment version.

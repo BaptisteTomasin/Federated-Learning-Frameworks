@@ -135,11 +135,12 @@ As a reminder, an epoch corresponds to the reading of all the learning examples.
 **Notes:**
 
 * With Federated Averaging, the accuracies is not impacted.
-* The run time is more important when we use the federated learning. Due to the communication time between the server and the workers or the number of loops more important.
+* The runtime is more important when we use the federated learning. Due to the communication time between the server and the workers or the higher number of loops.
 * It's important to choose a good compromise between the number of cycles and the number of model parameters, like number of rounds and number of local epochs
 * Tensorflow Federated take more time than PaddleFL with big model, because it doesn't parallelize the local training.
-* Mainly, PaddleFL offer a learning with fewer epochs and rounds
-* The time of communication have an impact on the time of convergence. The Multi-layer perceptron take more time for fewer rounds with PaddleFL (use communication) than TFF (no communication)
+* PaddleFL offer a learning with fewer epochs and rounds
+* The time of communication has an impact on the time of convergence. The Multi-layer perceptron takes more time for fewer rounds with PaddleFL (use communication) than TFF (no communication)
+
 
 ### Conclusion
 
