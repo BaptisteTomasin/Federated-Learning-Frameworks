@@ -82,7 +82,7 @@ class Time_series_loader:
             Normalize the distributed Time Series with the MinMaxScaler method
         """
         for ts in self.clients.columns.droplevel(0).unique():
-            data = self.clients.loc(axis=1)[self.clients.columns.droplevel(1)!="Sector",ts].values.reshape(-1)
+            data = self.clients.loc(axis=1)[self.clients.columns.droplevel(1)!="Test",ts].values.reshape(-1)
             data = data[~numpy.isnan(data)]
             scaler = MinMaxScaler(feature_range=(-1,1))
             scaler.fit(data.reshape(-1,1))
